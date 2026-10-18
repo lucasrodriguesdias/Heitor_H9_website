@@ -1,0 +1,4 @@
+import { navigation, socialLinks } from "@/config/site";
+import { Brand } from "./brand";
+import { SocialIcon } from "./social-icon";
+export function Footer() { return <footer className="site-footer"><div className="page-shell footer-main"><Brand /><p>FUTEBOL É MAIS BONITO<br />QUANDO É REAL.</p></div><div className="page-shell footer-socials">{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`${social.label} do Heitor`}><SocialIcon platform={social.label === "WhatsApp" ? "whatsapp" : "instagram"} size={22} /><span>{social.label}</span></a>)}</div><div className="page-shell footer-bottom"><nav aria-label="Menu do rodapé">{navigation.slice(0, 5).map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}</nav><p>© 2026 H9 — HEITOR. FEITO NA RESENHA, COM RESPEITO À HISTÓRIA.</p></div></footer>; }

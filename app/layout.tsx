@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { INSTAGRAM_URL } from "@/config/site";
+import { assetPath, INSTAGRAM_URL, SITE_URL } from "@/config/site";
 import "./globals.css";
 
-const SITE_URL = "https://heitor-h9.rodrigues-fortini.chatgpt.site";
 const TITLE = "H9 | Heitor — O Camisa 9 das Peladas";
 const DESCRIPTION =
   "Conheça Heitor, o H9. De Belo Horizonte e do Complexo do IAPI para os gramados, uma história de futebol, fé, disciplina e muita resenha.";
@@ -11,15 +10,15 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: TITLE,
   description: DESCRIPTION,
-  alternates: { canonical: "/" },
+  alternates: { canonical: SITE_URL },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: "/",
+    url: SITE_URL,
     siteName: "H9 — Heitor",
     images: [
       {
-        url: "/assets/desktop/01_hero_desktop.png",
+        url: `${SITE_URL}assets/desktop/01_hero_desktop.png`,
         width: 1672,
         height: 941,
         alt: "Heitor, o H9, segurando uma bola em um estádio",
@@ -32,12 +31,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/assets/desktop/01_hero_desktop.png"],
+    images: [`${SITE_URL}assets/desktop/01_hero_desktop.png`],
   },
   robots: { index: true, follow: true },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: assetPath("/favicon.svg"),
+    shortcut: assetPath("/favicon.svg"),
   },
 };
 

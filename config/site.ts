@@ -1,3 +1,12 @@
+export const SITE_URL =
+  "https://lucasrodriguesdias.github.io/Heitor_H9_website/";
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+export function assetPath(path: string): string {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  return `${BASE_PATH}${normalizedPath}`;
+}
+
 export const WHATSAPP_URL = "https://wa.link/7euh5l";
 export const INSTAGRAM_URL = "https://www.instagram.com/heitorr.h/";
 export const navigation = [
@@ -7,8 +16,8 @@ export const navigation = [
 ];
 export const whatsappHref = WHATSAPP_URL;
 export const socialLinks = [
-  { label: "WhatsApp", href: WHATSAPP_URL, icon: "/assets/icons/whatsapp.png" },
-  { label: "Instagram", href: INSTAGRAM_URL, icon: "/assets/icons/instagram.png" },
+  { label: "WhatsApp", href: WHATSAPP_URL, icon: assetPath("/assets/icons/whatsapp.png") },
+  { label: "Instagram", href: INSTAGRAM_URL, icon: assetPath("/assets/icons/instagram.png") },
 ];
 export const storyMoments = [
   { kicker: "A presença", title: "HEITOR 9", subtitle: "DECISIVO POR NATUREZA.", detail: "23 ANOS · BELO HORIZONTE · CAMISA 9" },
@@ -25,8 +34,8 @@ export const gameTraits = [
   { number: "04", title: "COMEMORAÇÃO", text: "Porque gol bom merece comemoração." },
 ];
 export const galleryItems = [
-  { desktop: "/assets/desktop/01_hero_desktop.png", mobile: "/assets/mobile/01_hero_mobile.png", alt: "Composição esportiva de Heitor segurando a bola no estádio", label: "Presença" },
-  { desktop: "/assets/desktop/02_historia_desktop.png", mobile: "/assets/mobile/02_historia_mobile.png", alt: "Heitor diante da paisagem urbana de Belo Horizonte", label: "Origem" },
-  { desktop: "/assets/desktop/03_destaque_desktop.png", mobile: "/assets/mobile/03_destaque_mobile.png", alt: "Montagem de Heitor em momentos de jogo e comemoração", label: "Decisão" },
-  { desktop: "/assets/desktop/05_cta_desktop.png", mobile: "/assets/mobile/05_cta_mobile.png", alt: "Heitor em quadra ao pôr do sol", label: "Convocação" },
+  { desktop: assetPath("/assets/desktop/01_hero_desktop.png"), mobile: assetPath("/assets/mobile/01_hero_mobile.png"), alt: "Composição esportiva de Heitor segurando a bola no estádio", label: "Presença" },
+  { desktop: assetPath("/assets/desktop/02_historia_desktop.png"), mobile: assetPath("/assets/mobile/02_historia_mobile.png"), alt: "Heitor diante da paisagem urbana de Belo Horizonte", label: "Origem" },
+  { desktop: assetPath("/assets/desktop/03_destaque_desktop.png"), mobile: assetPath("/assets/mobile/03_destaque_mobile.png"), alt: "Montagem de Heitor em momentos de jogo e comemoração", label: "Decisão" },
+  { desktop: assetPath("/assets/desktop/05_cta_desktop.png"), mobile: assetPath("/assets/mobile/05_cta_mobile.png"), alt: "Heitor em quadra ao pôr do sol", label: "Convocação" },
 ];

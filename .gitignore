@@ -54,3 +54,6 @@ next-env.d.ts
 /.codex/
 /outputs/
 /work/
+
+# Local delivery archives are not source files.
+/*.zip

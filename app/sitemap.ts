@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/config/site";
 
-const SITE_URL = "https://heitor-h9.rodrigues-fortini.chatgpt.site";
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
